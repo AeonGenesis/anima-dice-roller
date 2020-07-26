@@ -1,3 +1,4 @@
+// Object for all attributes
 const attributes = {
     str: 0,
     strModifier: 0,
@@ -7,6 +8,7 @@ const attributes = {
     intModifier: 0
 };
 
+// Array containing objects of all the ranges that change the modifier for the stat
 const ranges = [
     { min: 6, max: 7, modifier: 5},
     { min: 8, max: 9, modifier: 10},
@@ -19,6 +21,9 @@ const ranges = [
     { min: 20, max: Math.infinity, modifier: 45},
 ];
 
+// Iterates over the ranges array comparing the stat it was given. If
+// it falls within the range given in the for loop, it returns that modifier value
+// in the object. If none of the values match up, it returns 0 for the modifier.
 const getModifier = (stat, ranges) => {
     console.log(stat, ranges);
     for (const range of ranges) {
