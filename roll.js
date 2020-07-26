@@ -25,6 +25,7 @@ const ranges = [
 // it falls within the range given in the for loop, it returns that modifier value
 // in the object. If none of the values match up, it returns 0 for the modifier.
 const getModifier = (stat, ranges) => {
+    for (const range of ranges) {
         if (stat >= range.min && stat <= range.max) {
             return range.modifier;
         }
@@ -41,9 +42,11 @@ attributes.intModifier = getModifier(attributes.int, ranges)
 
 
 
-const d100 = (min, max) => {
+const getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+const d100 = () => getRandomInt(1, 100);
 
 
 
