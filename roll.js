@@ -25,8 +25,6 @@ const ranges = [
 // it falls within the range given in the for loop, it returns that modifier value
 // in the object. If none of the values match up, it returns 0 for the modifier.
 const getModifier = (stat, ranges) => {
-    console.log(stat, ranges);
-    for (const range of ranges) {
         if (stat >= range.min && stat <= range.max) {
             return range.modifier;
         }
